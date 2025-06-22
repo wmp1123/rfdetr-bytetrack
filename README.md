@@ -7,7 +7,7 @@ This project performs vehicle detection and tracking using RF-DETR and ByteTrack
 1. Clone the repository:
 ```bash
 git clone https://github.com/wmp1123/rfdetr-bytetrack.git
-cd traffic_analysis
+cd rfdetr-bytetrack
 ```
 
 2. Create a virtual environment
@@ -24,7 +24,9 @@ conda activate rfdetr-bytetrack
 pip install -r requirements.txt
 ```
 4. Download pre-trained model
+```bash
 ./setup.sh
+```
 
 5. Run the script
 ```bash
