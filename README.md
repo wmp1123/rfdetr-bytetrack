@@ -6,8 +6,8 @@ This project performs vehicle detection and tracking using RF-DETR and ByteTrack
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/traffic-video-processor.git
-cd traffic-video-processor
+git clone https://github.com/wmp1123/rfdetr-bytetrack.git
+cd traffic_analysis
 ```
 
 2. Create a virtual environment
