@@ -23,15 +23,39 @@ conda activate rfdetr-bytetrack
 ```bash
 pip install -r requirements.txt
 ```
+If the libraries in requirements.txt do not work correctly, install the following versions instead:
+```bash
+pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu121
+pip install transformers==4.44.2 peft==0.12.0
+pip install --upgrade "protobuf<=3.20.3"
+```
+
 4. Download pre-trained model
+Linux / macOS:
 ```bash
 ./setup.sh
 ```
+Windows:
+```bash
+./setup.ps1
+```
 
+## Usage
 5. Run the script
 ```bash
 python traffic_analysis.py
 ```
+### Configure In/Out Zones:
+```bash
+ZONE_OUT_POLYGONS
+```
+to define the vehicle entry and exit zones.
+
+## Demo
+
+| Before | After (RF-DETR + ByteTrack) |
+|-------|------------------------------|
+| <img src="assets/before.gif" width="400"/> | <img src="assets/after.gif" width="400"/> |
 
 ## Run Evaluation
 
@@ -49,9 +73,11 @@ python scripts/run_mot_challenge.py \
   --NUM_PARALLEL_CORES 1 \
   --DO_PREPROC False
 ```
-
+## Project Structure
+```bash
 data/
 ├── raw_video/        # Original input videos used for processing
 ├── images/           # Extracted video frames used for detection and tracking
-├── gt/               # Ground truth and tracking result files (e.g., MOT format)
-└── processed_video/  # Output videos with detection and tracking visualized
+├── gt/               # Ground truth and tracking result files (MOT format)
+└── processed_video/  # Output videos with detection and tracking visualization
+```
